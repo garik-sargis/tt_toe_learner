@@ -8,11 +8,16 @@ import com.gs.tt_toe_learner.stat.TTToeStats;
 public final class Main {
 
     public static void main(String[] args) {
+        int trainCount;
+        int gameCount;
+
         if (args.length != 2) {
-            throw new IllegalArgumentException();
+            trainCount = 5000;
+            gameCount = 10;
         } else {
-            final int trainCount = Integer.parseInt(args[0]);
-            final int gameCount = Integer.parseInt(args[1]);
+            trainCount = Integer.parseInt(args[0]);
+            gameCount = Integer.parseInt(args[1]);
+        }
 
             final long seed = System.currentTimeMillis();
 
@@ -24,5 +29,5 @@ public final class Main {
             TTToeStats.printStats(learningPlayer, consolePlayer, gameCount);
         }
 
-    }
+
 }
